@@ -1,0 +1,26 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<header><h1>Welcome {{userString}}!</h1></header>
+<nav>
+    <div class="breadcrumb flat">
+        <button class="signup" [disabled]="user==1" (click)="changeUser(1)">User 1</button>
+        <button class="signup" [disabled]="user==2" (click)="changeUser(2)">User 2</button>
+        <button class="signup" [disabled]="user==3" (click)="changeUser(3)">User 3</button>
+        <button class="signup" [disabled]="user==4" (click)="changeUser(4)">User 4</button>
+    </div>
+</nav>
+
+
+<div 
+    id="pricing-table" 
+    class="clear"
+   
+>
+        <div class="plan"  *ngFor="let data of filterData(user); let i = index">
+            <h3>{{data.title}}<span>{{data.id}}</span></h3>
+            <a class="signup" (click) = onShow(data.id)>Show</a>         
+            <ul>
+                <li>{{data.body}}</li>			
+            </ul> 
+        </div>
+</div>
